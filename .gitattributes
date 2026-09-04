@@ -1,0 +1,13 @@
+*                     text=auto
+
+/.agents              export-ignore
+/.editorconfig        export-ignore
+/.gitattributes       export-ignore
+/.github              export-ignore
+/.gitignore           export-ignore
+/AGENTS.md            export-ignore
+/CHANGELOG.md         export-ignore
+/phpstan*             export-ignore
+/phpunit.xml.dist     export-ignore
+/skills-lock.json      export-ignore
+/tests                export-ignore
