@@ -1,40 +1,26 @@
 # Changelog
 
-## v2.0.0
+## Unreleased
 
-*No significant changes*
+### Added
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;[View changes on GitHub](https://github.com/edram/laravel-package/compare/1.0.0...2.0.0)
+- Isolated temporary workspaces backed by Laravel Storage.
+- Named and anonymous workspace execution through Laravel's container.
+- Stable workspace IDs and direct `handle` return values.
+- `failed`, `terminate`, and container-invoked `terminating` lifecycle hooks.
+- Automatic cleanup after HTTP requests, Artisan commands, and queue jobs.
+- A `destroy()` method to explicitly delete an individual workspace directory.
 
-## v1.0.0
+### Changed
 
-### 🚀 Features
+- Use Laravel's scoped Storage disks, preserving parent prefixes and driver capabilities.
+- Require Laravel 12.45+ or 13.x for queue attempt lifecycle events.
+- Reject repeated preparation of the same workspace instance.
+- Follow Laravel's default filesystem disk unless a workspace disk is specified.
+- Use `TEMP_WORKSPACE_DISK` and `TEMP_WORKSPACE_DIRECTORY` environment variables.
 
-- Add package model &nbsp;-&nbsp; by @edram and **Codex GPT-5** [<samp>(76282)</samp>](https://github.com/edram/laravel-package/commit/76282c0)
+### Fixed
 
-### 🐞 Bug Fixes
-
-- Timestamp migration filename &nbsp;-&nbsp; by @edram [<samp>(690db)</samp>](https://github.com/edram/laravel-package/commit/690db1c)
-- **devcontainer**: Correct workspace folder path &nbsp;-&nbsp; by @edram [<samp>(7586b)</samp>](https://github.com/edram/laravel-package/commit/7586bf7)
-
-##### &nbsp;&nbsp;&nbsp;&nbsp;[View changes on GitHub](https://github.com/edram/laravel-package/compare/0.0.3...1.0.0)
-
-## v0.0.3
-
-*No significant changes*
-
-##### &nbsp;&nbsp;&nbsp;&nbsp;[View changes on GitHub](https://github.com/edram/laravel-package/compare/0.0.2...0.0.3)
-
-## v0.0.2
-
-*No significant changes*
-
-##### &nbsp;&nbsp;&nbsp;&nbsp;[View changes on GitHub](https://github.com/edram/laravel-package/compare/0.0.1...0.0.2)
-
-## v0.0.1
-
-### 🚀 Features
-
-- **template**: Scaffold laravel package foundation &nbsp;-&nbsp; by @edram and **Codex** [<samp>(3b7c4)</samp>](https://github.com/edram/laravel-package/commit/3b7c446)
-
-##### &nbsp;&nbsp;&nbsp;&nbsp;[View changes on GitHub](https://github.com/edram/laravel-package/compare/3b7c446696a76cae62e2fbd9364a9f319a44eec3...0.0.1)
+- Preserve numeric workspace directory names such as `0`.
+- Clean queue workspaces after failure handlers have finished.
+- Preserve work exceptions when failure hooks throw, and report cleanup errors.

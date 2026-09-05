@@ -31,6 +31,23 @@ jobs:
             exit 1
           fi
 
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: pdo_sqlite
+          coverage: none
+
+      - name: Install dependencies
+        uses: ramsey/composer-install@v3
+
+      - name: Validate release
+        run: |
+          composer validate --strict
+          composer test
+          composer analyse
+          vendor/bin/pint --test
+
       - name: Create changelog, tag and release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

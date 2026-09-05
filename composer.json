@@ -1,11 +1,12 @@
 {
-    "name": "edram/laravel-package",
-    "description": "Laravel package template",
+    "name": "edram/laravel-temp-workspace",
+    "description": "Temporary workspaces backed by Laravel Storage",
     "keywords": [
         "laravel",
-        "laravel-package"
+        "temporary-workspace",
+        "laravel-storage"
     ],
-    "homepage": "https://github.com/edram/laravel-package",
+    "homepage": "https://github.com/edram/laravel-temp-workspace",
     "license": "MIT",
     "authors": [
         {
@@ -16,9 +17,12 @@
     ],
     "require": {
         "php": "^8.3",
-        "illuminate/contracts": "^12.0 || ^13.0",
-        "illuminate/database": "^12.0 || ^13.0",
-        "illuminate/support": "^12.0 || ^13.0"
+        "illuminate/console": "^12.45 || ^13.0",
+        "illuminate/contracts": "^12.45 || ^13.0",
+        "illuminate/filesystem": "^12.45 || ^13.0",
+        "illuminate/queue": "^12.45 || ^13.0",
+        "illuminate/support": "^12.45 || ^13.0",
+        "league/flysystem-path-prefixing": "^3.0"
     },
     "require-dev": {
         "larastan/larastan": "^3.0",
@@ -29,12 +33,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Edram\\LaravelPackage\\": "src/"
+            "Edram\\LaravelTempWorkspace\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Edram\\LaravelPackage\\Tests\\": "tests/"
+            "Edram\\LaravelTempWorkspace\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -54,10 +58,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Edram\\LaravelPackage\\LaravelPackageServiceProvider"
+                "Edram\\LaravelTempWorkspace\\LaravelTempWorkspaceServiceProvider"
             ],
             "aliases": {
-                "LaravelPackage": "Edram\\LaravelPackage\\Facades\\LaravelPackage"
+                "LaravelTempWorkspace": "Edram\\LaravelTempWorkspace\\Facades\\LaravelTempWorkspace"
             }
         }
     },

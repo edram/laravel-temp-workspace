@@ -2,13 +2,10 @@
 
 ## Project Structure & Module Organization
 
-This repository is a Laravel package template for `edram/laravel-package`.
+This repository contains the `edram/laravel-temp-workspace` Laravel package.
 
-- `src/` contains package source code, including the service provider, facade, command, and main package class.
-- `config/laravel-package.php` contains publishable package configuration.
-- `routes/web.php` is the package route entrypoint.
-- `database/migrations/*.stub` stores publishable migration stubs.
-- `resources/views/` is reserved for package views.
+- `src/` contains the workspace, manager, service provider, and facade.
+- `config/laravel-temp-workspace.php` contains publishable disk and directory configuration.
 - `tests/` contains Pest tests backed by Orchestra Testbench.
 - `.github/workflows/` defines CI for tests, static analysis, and formatting.
 
@@ -35,24 +32,23 @@ composer validate --strict
 
 When writing or editing code, use the `coding` and `tdd` skills.
 
-Follow Laravel PHP style conventions with 4-space indentation. Use typed methods and properties where practical. Package classes live under `Edram\LaravelPackage`.
+Follow Laravel PHP style conventions with 4-space indentation. Use typed methods and properties where practical. Package classes live under `Edram\LaravelTempWorkspace`.
 
 Naming patterns:
 
-- Service provider: `LaravelPackageServiceProvider`
-- Facade: `Facades\LaravelPackage`
-- Command: `LaravelPackageCommand`
-- Config key and publish tags: `laravel-package`
-- Database table examples: `laravel_package`
+- Service provider: `LaravelTempWorkspaceServiceProvider`
+- Facade: `Facades\LaravelTempWorkspace`
+- Manager: `WorkspaceManager`
+- Config key and publish tags: `laravel-temp-workspace`
 
 ## Testing Guidelines
 
-Use Pest for tests and Orchestra Testbench for Laravel integration behavior. Add or update tests in `tests/` when changing service provider registration, commands, facades, config, routes, or migrations.
+Use Pest for tests and Orchestra Testbench for Laravel integration behavior. Add or update tests in `tests/` when changing workspaces, storage integration, lifecycle cleanup, the service provider, facade, or configuration.
 
 Prefer behavior-focused test names:
 
 ```php
-it('registers the package command', function () {
+it('cleans a workspace when a queue job fails', function () {
     //
 });
 ```
@@ -67,7 +63,7 @@ Pull requests should include:
 
 - A concise summary of the change.
 - Any related issue or motivation.
-- Notes about public API, config, command, or migration changes.
+- Notes about public API, configuration, storage, or lifecycle changes.
 - Confirmation that `composer test`, `composer analyse`, and `composer format` pass.
 
 ## Security & Configuration Tips

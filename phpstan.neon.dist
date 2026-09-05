@@ -3,7 +3,8 @@ includes:
 
 parameters:
     level: 6
+    configDirectories:
+        - config
     paths:
         - config
         - src
-        - database
