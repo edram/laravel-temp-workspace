@@ -24,3 +24,11 @@
 - Preserve numeric workspace directory names such as `0`.
 - Clean queue workspaces after failure handlers have finished.
 - Preserve work exceptions when failure hooks throw, and report cleanup errors.
+
+## v0.0.1
+
+### 🚀 Features
+
+- Add temporary workspaces backed by Laravel Storage &nbsp;-&nbsp; by @edram and **Codex GPT-6** [<samp>(5d28a)</samp>](https://github.com/edram/laravel-temp-workspace/commit/5d28a0a)
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;[View changes on GitHub](https://github.com/edram/laravel-temp-workspace/compare/c885c52ab0f2c27ca2d0090ede6ead7aa1991b7b...0.0.1)
