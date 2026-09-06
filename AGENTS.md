@@ -68,4 +68,4 @@ Pull requests should include:
 
 ## Security & Configuration Tips
 
-Do not commit local secrets, tokens, or generated credentials. Keep `composer.lock` only if this repository is used as an application-style template; omit it for normal published package releases if desired.
+Do not commit local secrets, tokens, or generated credentials. This repository is a published library; keep `composer.lock` untracked.
